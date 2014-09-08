@@ -1,9 +1,11 @@
 (function() {
 	var taskTracker = angular.module('TaskTracker', []);
 	
-	taskTracker.controller('NewTask', function() {
+	taskTracker.controller('NewTask', function(dateFilter) {
 		this.task = {};
 		this.showErrors = false;
+		
+		$('input.datepicker').datepicker();
 		
 		this.taskAdd = function(valid, tasks) {
 			this.showErrors = true;
